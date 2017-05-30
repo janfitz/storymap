@@ -18,9 +18,18 @@
     }
 }
 
+p {
+  text-align: justify;
+}
+
+p img {
+  max-width: 150px;
+  float: left;
+  margin: 10px 20px 10px 10px;
+}
+
 .main {
     padding: 20px;
-
     padding-bottom: 500px;
 }
 @media (min-width: 768px) {
@@ -38,13 +47,15 @@
     margin-top: -10px;
     position: fixed;
    /* top: 33.3333%; */
-    width: 3px;
-    height: 3px;
-    background: red;;
+    width: 100%;
+    border-top: dotted 2px;
+    opacity: 0.3;
+    z-index: -1000;
 }
 
 .viewing {
-    background: #eee;
+    background: #679bef;
+    color: #ffffff;
 }
 
 section {
