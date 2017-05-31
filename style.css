@@ -54,11 +54,13 @@ p img {
 }
 
 .viewing {
+    margin-top: 30px;
     background: #679bef;
     color: #ffffff;
 }
 
 section {
+    margin-top: 10px;
     padding: 5px 10px 10px 10px;
     border-radius: 10px;
 }

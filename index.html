@@ -34,26 +34,26 @@
                   zcela nově, v téměř současné podobě, vystavěn kostel svatého Jakuba.</p>
             </section>
 
-            <section id="jakub" data-place="jakub">
+            <section id="jakub" data-place="jakub" onclick="getFocus(this.id)">
                 <h2>Kostel sv. Jakuba</h2>
                 <p><img src="img/jakub.jpg" class="img-circle" />Kostel svatého Jakuba Staršího (Většího) je pozdně gotický trojlodní halový kostel nacházející se na Jakubském náměstí v brněnské čtvrti Brno-střed, jehož historie sahá až do počátku 13. století. Jedná se o významně dochovanou památku městské církevní architektury na českém území. Je zde pochován slavný obránce města proti švédskému obléhání, maršál Louis Raduit de Souches. Národní kulturní památka od roku 1995. Jde o farní kostel farnosti Brno - sv. Jakub.</p>
                 <p>Z archeologických nálezů vyplývá, že někdy na konci 13. až začátku 14. století byl románský kostel nahrazen vrcholně gotickou stavbou o přibližně stejných rozměrech, jako je kostel stávající. Ta byla ale téměř beze zbytku odstraněna a nahrazena stavbou současnou. V této době je také doložena fundace množství oltářů, např. sv. Víta (1413), sv. Filipa a Jakuba (1423), sv. Kříže (1429), nebo sv. Anny (1446).</p>
                 <p>Na delší straně je ke kostelu připojena kaple a sakristie. Kaple má plamínkový dekor nad kterým se nachází atypicky kruhové okno, zatímco sakristie je větší a s více ornamentálním zdobením na fasádě. Průčelí sakristie je ohraničeno fiálami, které jsou zakončeny křížovou kytkou. Dalším výrazným prvkem průčelí, je velký vimperk s kraby a křížovou kyticí na samém vrcholu. Tam, kam nezasahuje vimperk, je sakristie lemována atikou.</p>
             </section>
 
-            <section id="jan" data-place="jan">
+            <section id="jan" data-place="jan" onclick="getFocus(this.id)">
                 <h2>Kostel sv. Janů</h2>
                 <p><img src="img/jan.jpg" class="img-circle" /> Kostel svatého Jana Křtitele a Jana Evangelisty, běžně zvaný jako kostel svatých Janů, je římskokatolický chrám postavený ve 13. století při minoritském klášteře v historickém centru Brna. Areál kláštera s kostelem a loretánskou kaplí je od roku 1958 zapsán v seznamu kulturních památek České republiky.</p>
                 <p>Minoritský řád přišel do Brna někdy mezi lety 1227 a 1239. Společně se vznikem klášterního provizoria byl postaven i provizorní kostelík svatého Jana Křtitele, jehož pozůstatky byly údajně nalezeny při stavebních pracích v roce 1722. V polovině 13. století vznikl definitivní chrám, který byl roku 1257 vysvěcen olomouckým biskupem Brunem ze Schauenburku. O pět let později byl celý areál kláštera postižen požárem. Donátorem obnovy stavby se stal Mikuláš Opavský, jenž také společně s chotí Anežkou našel v kostele místo posledního odpočinku. Původně se měl stát rodovým pohřebištěm opavských Přemyslovců.</p>
             </section>
 
-            <section id="janAmos" data-place="janAmos">
+            <section id="janAmos" data-place="janAmos" onclick="getFocus(this.id)">
                 <h2>Českobratrský evangelický chrám Jana Amose Komenského</h2>
                 <p><img src="img/janAmos.jpg" class="img-circle" />Českobratrský evangelický chrám Jana Amose Komenského, lidově zvaný Červený kostel, se nachází na brněnském Komenského náměstí v městské části Brno-střed na severním okraji katastrálního území Město Brno. Byl postaven ve stylu severoněmecké gotiky v roce 1867. Kostel z červených režných cihel je dlouhý 45 m, jeho věž má výšku 50 m. V souladu s protestantskou tradicí je jeho interiér strohý a jednoduchý. Jednou z mála ozdob jsou sochařské práce od Franze Schönthalera.</p>
                 <p>V lednu 2011 student Masarykovy univerzity zazdil USB flash disk do zdi Červeného kostela. Náhodný kolemjdoucí na ni mohl nahrát libovolná data. Jednalo se o první zapojení do streetartového projektu Dead drops v České republice. Flash disk byl ale po krátké době odstraněn.</p>
             </section>
 
-            <section id="tomas" data-place="tomas">
+            <section id="tomas" data-place="tomas" onclick="getFocus(this.id)">
                 <h2>Kostel sv. Tomáše</h2>
                 <p><img src="img/tomas.jpg" class="img-circle" />Kostel svatého Tomáše apoštola, původně kostel Zvěstování Panny Marie a svatého Tomáše apoštola, je barokní farní kostel, původně gotický klášterní kostel augustiniánů. Nachází se v brněnské městské části Brno-střed na jihu Moravského náměstí v katastrálním území Město Brno. Počátky chrámu sahají do 14. století, kdy jej Jan Jindřich založil společně s augustiniánským klášterem. Samotný kostel byl v průběhu staletí mnohokrát opravován a přestavován, jeho současná barokní podoba pochází ze 17. století. Jde o farní kostel farnosti Brno u kostela sv. Tomáše.</p>
                 <p>V průběhu let 1732–1752 byl zásadně přestavěn starý konvent a prelatura, na jejichž vybudování se podíleli Mořic Grimm a jeho syn František Antonín. Portál prelatury je osazen sochami markraběte Jana Jindřicha a jeho syna Jošta jako římského krále od Josefa Leonarda Webera. Mořic Grimm zároveň v letech 1749–1752 barokizoval presbytář kostela.</p>
@@ -64,11 +64,19 @@
             <button type="button" class="btn scrollToTop" style="float:right;">Nahoru</button>
 
             <script>
-            //Click event to scroll to top
+            // Click event to scroll to top
             $('.scrollToTop').click(function(){
               $('html, body').animate({scrollTop : 0},2400);
               return false;
             });
+
+            // Get focus on current clicked section
+            function getFocus(section) {
+              document.getElementById(section).scrollIntoView({
+                block: "start",
+                behavior: "smooth"
+              });
+            }
             </script>
 
         </div>
@@ -83,7 +91,8 @@
 <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
 <script src="https://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="storymap.js"></script>
-<script src="smoothscroll.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/leaflet-color-markers.js"></script>
 <script type="text/javascript">
     (function () {
         'use strict';
