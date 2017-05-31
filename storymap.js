@@ -29,10 +29,10 @@
 
                 // Set default map markers as one layer
                 var churchesGroup = L.layerGroup();
-                var jakub = L.marker([49.196572, 16.608261]).on('click', L.bind(getFocus, null, "jakub")).addTo(churchesGroup);
-                var jan = L.marker([49.194299, 16.611152]).on('click', L.bind(getFocus, null, "jan")).addTo(churchesGroup);
-                var janAmos = L.marker([49.197679, 16.603257]).on('click', L.bind(getFocus, null, "janAmos")).addTo(churchesGroup);
-                var tomas = L.marker([49.197942, 16.607776]).on('click', L.bind(getFocus, null, "tomas")).addTo(churchesGroup);
+                var jakub = L.marker([49.196572, 16.608261], {icon: blueIcon}).on('click', L.bind(getFocus, null, "jakub")).addTo(churchesGroup);
+                var jan = L.marker([49.194299, 16.611152], {icon: blueIcon}).on('click', L.bind(getFocus, null, "jan")).addTo(churchesGroup);
+                var janAmos = L.marker([49.197679, 16.603257], {icon: blueIcon}).on('click', L.bind(getFocus, null, "janAmos")).addTo(churchesGroup);
+                var tomas = L.marker([49.197942, 16.607776], {icon: blueIcon}).on('click', L.bind(getFocus, null, "tomas")).addTo(churchesGroup);
                 churchesGroup.addTo(map);
 
                 return map;
@@ -141,7 +141,9 @@
                     };
                     fg.addLayer(L.marker([marker.lat, marker.lon], {icon: redIcon}).on('click', L.bind(getFocus, null, key)));
 
-                    map.setView([marker.lat, marker.lon], marker.zoom, 1);
+                    map.flyTo([marker.lat, marker.lon], marker.zoom);
+
+
 
                     /* Custom map for each slide*/
                     /*

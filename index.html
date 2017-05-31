@@ -88,7 +88,7 @@
     </div>
 </div>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
-<script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
 <script src="https://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="storymap.js"></script>
 <script src="js/smoothscroll.js"></script>
@@ -98,10 +98,10 @@
         'use strict';
 
         var markers = {
-            jakub: {lat:49.196572, lon: 16.608261, zoom: 20, popup: "Kostel sv. Jakuba"},
-            jan: {lat: 49.194299, lon: 16.611152, zoom: 20, popup: "Kostel sv. Janů"},
-            janAmos: {lat: 49.197679, lon: 16.603257, zoom: 20, popup: "Českobratrský evangelický chrám Jana Amose Komenského"},
-            tomas: {lat: 49.197942, lon: 16.607776, zoom: 20, popup: "Kostel sv. Tomáše"}
+            jakub: {lat:49.196572, lon: 16.608261, zoom: 18, popup: "Kostel sv. Jakuba"},
+            jan: {lat: 49.194299, lon: 16.611152, zoom: 18, popup: "Kostel sv. Janů"},
+            janAmos: {lat: 49.197679, lon: 16.603257, zoom: 18, popup: "Českobratrský evangelický chrám Jana Amose Komenského"},
+            tomas: {lat: 49.197942, lon: 16.607776, zoom: 18, popup: "Kostel sv. Tomáše"}
         };
 
         $('.main').storymap({markers: markers});
