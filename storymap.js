@@ -155,7 +155,7 @@
                     if(typeof layer !== 'undefined'){
                       fg.addLayer(layer);
                     };
-                    fg.addLayer(L.marker([marker.lat, marker.lon]));
+                    fg.addLayer(L.marker([marker.lat, marker.lon]).on('click', L.bind(getFocus, null, key)));
 
                     map.setView([marker.lat, marker.lon], marker.zoom, 1);
 
@@ -168,7 +168,7 @@
                     else if (key === 'janAmos') {
                       L.tileLayer('http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png').addTo(map);
                     }
-                    else if (key === 'tomas'){
+                    else if (key === 'tomas') {
                       L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png').addTo(map);
                     }
                 }
@@ -181,6 +181,13 @@
                 showMapView($(this).data('place'));
             });
         };
+
+        function getFocus(key) {
+          document.getElementById(key).scrollIntoView({
+            block: "start",
+            behavior: "smooth"
+          });
+        }
 
         makeStoryMap(this, settings.markers);
 
